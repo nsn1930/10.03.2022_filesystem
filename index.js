@@ -35,7 +35,6 @@ app.set('views', './views');
 app.get('/create-file', function (req, res) {
     let message = ''
 
-    // let message = req.query.message
     mkdir('./database', function (err) {
         if (!err) {
             message = 'Direktorija sekmingai sukurta'
@@ -49,7 +48,7 @@ app.get('/create-file', function (req, res) {
             res.render('create-file', { message })
         }
     })
-
+    res.render('create-file', { message })
 })
 
 
